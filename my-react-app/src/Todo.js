@@ -1,4 +1,5 @@
 import { Modal } from "./Modal";
+import { ModalV2 } from './ModalV2';
 import { useState } from "react";
 
 const Todo = (props) => {
@@ -10,11 +11,13 @@ const Todo = (props) => {
 
     return (
         <>
-            <div class="card-content">
+            <div className="card-content">
                 <h2>{props.title}</h2>
-                <button onClick={() => { setShowModal(true) }} class="btn">Done</button>
+                <button onClick={() => setShowModal(true)} className="btn">
+                    Done
+                </button>
             </div>
-            {ShowModal && <Modal dismissModal={onDissmissModal}></Modal>}
+            {ShowModal && <ModalV2 dismissModal={onDissmissModal} />}
         </>
     );
 };
